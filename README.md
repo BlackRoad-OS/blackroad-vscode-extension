@@ -1,166 +1,48 @@
-# BlackRoad for Visual Studio Code
+<!-- BlackRoad SEO Enhanced -->
 
-Official VSCode extension for BlackRoad - manage agents, tasks, memory, and deployments from your IDE.
+# ulackroad vscode extension
 
-## Features
+> Part of **[BlackRoad OS](https://blackroad.io)** — Sovereign Computing for Everyone
 
-### Activity Bar
-- **Agents View** - Browse all agents by division, see status, send heartbeats
-- **Tasks View** - View tasks by status, dispatch new tasks, complete/assign tasks
-- **Memory View** - Browse memory entries by action type, search history
+[![BlackRoad OS](https://img.shields.io/badge/BlackRoad-OS-ff1d6c?style=for-the-badge)](https://blackroad.io)
+[![BlackRoad OS](https://img.shields.io/badge/Org-BlackRoad-OS-2979ff?style=for-the-badge)](https://github.com/BlackRoad-OS)
+[![License](https://img.shields.io/badge/License-Proprietary-f5a623?style=for-the-badge)](LICENSE)
 
-### Commands
-- `BlackRoad: Connect` - Connect to BlackRoad API
-- `BlackRoad: Disconnect` - Disconnect from API
-- `BlackRoad: Open Dashboard` - Open interactive dashboard panel
-- `BlackRoad: Deploy Project` - Deploy current project
-- `BlackRoad: View Logs` - View recent memory entries as logs
-- `BlackRoad: Dispatch Task` - Create a new task
-- `BlackRoad: Register Agent` - Register a new agent
-- `BlackRoad: Log to Memory` - Log an entry to memory
-- `BlackRoad: Search Memory` - Search memory entries
+**ulackroad vscode extension** is part of the **BlackRoad OS** ecosystem — a sovereign, distributed operating system built on edge computing, local AI, and mesh networking by **BlackRoad OS, Inc.**
 
-### Dashboard
-Interactive webview dashboard showing:
-- Agent statistics (total, active)
-- Task statistics (total, pending, completed)
-- Memory entry count
-- Connection status
-- Quick action buttons
+## About BlackRoad OS
 
-### Code Snippets
-Snippets for all BlackRoad SDKs:
-- TypeScript/JavaScript (`br-init`, `br-agents-list`, `br-task-dispatch`, etc.)
-- Python (`br-init`, `br-memory-log`, `br-try-except`, etc.)
-- Go (`br-init`, `br-agents-list`, `br-errors`, etc.)
-- Rust (`br-init`, `br-match-err`, etc.)
-- Ruby (`br-init`, `br-rescue`, etc.)
+BlackRoad OS is a sovereign computing platform that runs AI locally on your own hardware. No cloud dependencies. No API keys. No surveillance. Built by [BlackRoad OS, Inc.](https://github.com/BlackRoad-OS-Inc), a Delaware C-Corp founded in 2025.
 
-## Installation
+### Key Features
+- **Local AI** — Run LLMs on Raspberry Pi, Hailo-8, and commodity hardware
+- **Mesh Networking** — WireGuard VPN, NATS pub/sub, peer-to-peer communication
+- **Edge Computing** — 52 TOPS of AI acceleration across a Pi fleet
+- **Self-Hosted Everything** — Git, DNS, storage, CI/CD, chat — all sovereign
+- **Zero Cloud Dependencies** — Your data stays on your hardware
 
-### From Marketplace
-```bash
-code --install-extension blackroad-os.blackroad
-```
+### The BlackRoad Ecosystem
+| Organization | Focus |
+|---|---|
+| [BlackRoad OS](https://github.com/BlackRoad-OS) | Core platform and applications |
+| [BlackRoad OS, Inc.](https://github.com/BlackRoad-OS-Inc) | Corporate and enterprise |
+| [BlackRoad AI](https://github.com/BlackRoad-AI) | Artificial intelligence and ML |
+| [BlackRoad Hardware](https://github.com/BlackRoad-Hardware) | Edge hardware and IoT |
+| [BlackRoad Security](https://github.com/BlackRoad-Security) | Cybersecurity and auditing |
+| [BlackRoad Quantum](https://github.com/BlackRoad-Quantum) | Quantum computing research |
+| [BlackRoad Agents](https://github.com/BlackRoad-Agents) | Autonomous AI agents |
+| [BlackRoad Network](https://github.com/BlackRoad-Network) | Mesh and distributed networking |
+| [BlackRoad Education](https://github.com/BlackRoad-Education) | Learning and tutoring platforms |
+| [BlackRoad Labs](https://github.com/BlackRoad-Labs) | Research and experiments |
+| [BlackRoad Cloud](https://github.com/BlackRoad-Cloud) | Self-hosted cloud infrastructure |
+| [BlackRoad Forge](https://github.com/BlackRoad-Forge) | Developer tools and utilities |
 
-### Manual Installation
-```bash
-# Clone and build
-git clone https://github.com/BlackRoad-OS/blackroad-vscode-extension
-cd blackroad-vscode-extension
-npm install
-npm run compile
-
-# Package
-npm run package
-
-# Install .vsix
-code --install-extension blackroad-1.0.0.vsix
-```
-
-## Configuration
-
-Add to your `settings.json` or use Settings UI:
-
-```json
-{
-  "blackroad.apiKey": "br_xxxxxxxxxxxxxxxx",
-  "blackroad.apiUrl": "https://api.blackroad.io/v1",
-  "blackroad.autoConnect": true,
-  "blackroad.refreshInterval": 30
-}
-```
-
-### Settings
-
-| Setting | Type | Default | Description |
-|---------|------|---------|-------------|
-| `blackroad.apiKey` | string | `""` | BlackRoad API key |
-| `blackroad.apiUrl` | string | `https://api.blackroad.io/v1` | API base URL |
-| `blackroad.autoConnect` | boolean | `true` | Auto-connect on startup |
-| `blackroad.refreshInterval` | number | `30` | Auto-refresh interval in seconds (0 to disable) |
-
-## Usage
-
-### Quick Start
-1. Install the extension
-2. Open Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`)
-3. Run `BlackRoad: Connect`
-4. Enter your API key when prompted
-5. View agents, tasks, and memory in the sidebar
-
-### Snippets
-Type `br-` in any supported file to see available snippets:
-
-| Prefix | Description |
-|--------|-------------|
-| `br-init` | Initialize BlackRoad client |
-| `br-agents-list` | List agents |
-| `br-agent-register` | Register new agent |
-| `br-task-dispatch` | Dispatch a task |
-| `br-task-complete` | Complete a task |
-| `br-memory-log` | Log to memory |
-| `br-memory-query` | Query memory |
-| `br-til` | Share TIL entry |
-| `br-try-catch` / `br-errors` | Error handling |
-
-### Tree View Context Actions
-- Right-click an agent → Send Heartbeat
-- Right-click a task → Complete Task / Assign Task
-
-## Development
-
-```bash
-# Install dependencies
-npm install
-
-# Compile TypeScript
-npm run compile
-
-# Watch mode
-npm run watch
-
-# Lint
-npm run lint
-
-# Package for distribution
-npm run package
-
-# Publish to marketplace
-npm run publish
-```
-
-### Debugging
-1. Open extension in VSCode
-2. Press `F5` to launch Extension Development Host
-3. Test commands and views
-
-## Requirements
-
-- VSCode 1.85.0 or higher
-- BlackRoad API key
-
-## Links
-
-- [Documentation](https://docs.blackroad.io/tools/vscode)
-- [API Reference](https://docs.blackroad.io/api)
-- [GitHub](https://github.com/BlackRoad-OS/blackroad-vscode-extension)
-- [Issues](https://github.com/BlackRoad-OS/blackroad-vscode-extension/issues)
-
-## License
-
-See [LICENSE](./LICENSE) for details.
+### Links
+- **Website**: [blackroad.io](https://blackroad.io)
+- **Documentation**: [docs.blackroad.io](https://docs.blackroad.io)
+- **Chat**: [chat.blackroad.io](https://chat.blackroad.io)
+- **Search**: [search.blackroad.io](https://search.blackroad.io)
 
 ---
 
-Part of the **BlackRoad Empire**
 
----
-
-**Proprietary Software — BlackRoad OS, Inc.**
-
-This software is proprietary to BlackRoad OS, Inc. Source code is publicly visible for transparency and collaboration. Commercial use, forking, and redistribution are prohibited without written authorization.
-
-**BlackRoad OS — Pave Tomorrow.**
-
-*Copyright 2024-2026 BlackRoad OS, Inc. All Rights Reserved.*
